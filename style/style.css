@@ -1,0 +1,258 @@
+/** 
+ * 
+ * yu.Be CSS
+ * 
+ **/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Variables */
+* {
+	padding: 0;
+	margin: 0;
+	
+	--main-colour-light: #10afff;
+	--main-colour: #1c99ff;
+	--secondary-colour: #ffcc00;
+	--navbar-text-colour: #fff;
+}
+
+/* Body defaults */
+.body {
+	font-family: "Montserrat", sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+}
+
+/* Headers, paragraphs, etc. */
+h1, h2, h3, h4 {
+	line-height: 1.4;
+	font-weight: 400;
+}
+
+h1 { font-size: 32pt; }
+h2 { font-size: 28pt; }
+h3 { font-size: 22pt; }
+h4 { font-size: 15pt; }
+
+a {
+	color: var(--main-colour);
+	text-decoration-line: none;
+}
+
+/* Default inputs */
+button, input[type="submit"] {
+	border: none;
+	border-radius: 0.325em;
+	background: var(--secondary-colour);
+	padding: 0.6em;
+	font-family: "Montserrat", sans-serif;
+	font-size: 12pt;
+	font-weight: 600;
+	color: #000;
+}
+
+input[type="text"], input[type="password"] {
+	background: transparent;
+	border: none;
+	font-family: "Montserrat", sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	width: 100%;
+	outline: none;
+}
+
+/* Selection */
+::selection {
+	background: var(--main-colour-light);
+}
+
+/* Navigation bar */
+.navbar {
+	background: var(--main-colour);
+	box-shadow: 0 0 0.5em #0005;
+	color: var(--navbar-text-colour);
+	padding: 1em;
+	vertical-align: middle;
+	font-weight: 600;
+	height: 1.8em;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.navbar a {
+	background: var(--main-colour);
+	color: var(--navbar-text-colour);
+	text-decoration-line: none;
+}
+
+.navbar li {
+	display: inline;
+	margin: 1em;
+}
+
+.navbar .right {
+	float: right;
+}
+
+.navbar-logo {
+	font-size: 15pt;
+	font-weight: 700;
+}
+
+.navbar-logo-a {
+	color: var(--secondary-colour);
+}
+
+/* Main page */
+.main {
+	max-width: 100em;
+	margin: auto;
+}
+
+.left-side {
+	width: calc(100% - 27em);
+	margin-right: 2em;
+	float: left;
+}
+
+.left-side h1 {
+	font-size: 18pt;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.right-side {
+	width: 25em;
+	float: right;
+}
+
+/* Main video */
+.main-video-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	background: #000;
+	border-radius: 0.5em;
+	color: #fff;
+	text-shadow: 0 0.1em 0.5em #0008;
+}
+
+.main-video-container:hover {
+	cursor: pointer;
+}
+
+.main-video {
+	grid-row-start: 1;
+	grid-column-start: 1;
+	z-index: 1;
+	width: 100%;
+	border-radius: 0.5em;
+}
+
+/* Controls */
+.main-video-controls {
+	grid-row-start: 1;
+	grid-column-end: 1;
+	grid-column-start: 1;
+	z-index: 2;
+}
+
+.main-controls-top {
+	height: calc(100% - 6.5em);
+}
+
+.main-controls-title {
+	margin: 1em;
+	font-size: 18pt;
+	font-weight: 600;
+}
+
+.main-controls-bottom {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 2em auto;
+	height: 6.5em;
+	position: relative;
+	bottom: 0;
+}
+
+.main-controls-item {
+	display: inline;
+	margin: 0.5em;
+	margin-left: 1em;
+	height: calc(100% - 1em);
+}
+
+/* Desc. */
+.rs-desc {
+	opacity: 0.8;
+}
+
+.rs-desc p {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+}
+
+/* Actions */
+.rs-actions {
+	margin-bottom: 1em;
+}
+
+/* Login popup */
+.login-popup {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1001;
+	background: #000d;
+	backdrop-filter: blur(1.0em);
+}
+
+.popup-box {
+	background: #fff;
+	border-radius: 0.325em;
+	box-shadow: 0 0.5em 1.25em #000;
+	position: relative;
+	top: calc(50vh - 12.5em);
+	left: calc(50vw - 15em);
+	width: 30em;
+	height: 25em;
+}
+
+.popup-box-internal {
+	position: relative;
+	padding: 1em;
+	width: 28em;
+	height: 23em;
+}
+
+.popup-box label {
+	font-weight: 600;
+}
+
+.sign-in-feild {
+	border-radius: 0.325em;
+	background: #eee;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+.sign-in-bottom {
+	position: absolute;
+	width: 28em;
+	bottom: 1em;
+	left: 1em;
+}
+
+.sign-in-submit {
+	float: right;
+}
+
+/* Misc. */
+.before {
+	margin: 5em;
+}
