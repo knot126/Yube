@@ -2,7 +2,7 @@
 <html lang="en-gb">
 	<head>
 		<meta charset="utf-8">
-		<title>Smash Hit Modding &mdash; Custom lights test 2022-08-09 #smashhit &mdash; yuBe</title>
+		<title>${video.title}$ &mdash; yuBe</title>
 		<link rel="icon" type="image/svg+xml" href="favicon.png"/>
 		<link rel="stylesheet" type="text/css" href="style/style.css"/>
 		<script src="script/player.js"></script>
@@ -38,7 +38,8 @@
 			<div class="navbar">
 				<div style="float: left;">
 					<ul>
-						<li><span class="navbar-logo">yu<span class="navbar-logo-a">Be</span></span></li>
+<!-- 						<li><span class="navbar-logo">yu<span class="navbar-logo-a">Be</span></span></li> -->
+						<img class="logo" src="assets/logo.svg"/>
 						<li><a href="/">Home</a></li>
 						<li><a href="/videos">Videos</a></li>
 						<li><a href="/recent">Recent</a></li>
@@ -58,10 +59,10 @@
 				<div class="left-side">
 					<div class="rs-vid">
 						<div class="main-video-container">
-							<video id="video" class="main-video" src="cdn-videos-storage/vid2.mp4" loop></video>
+							<video id="video" class="main-video" src="${video.file}$" loop></video>
 							<div id="video-controls" class="main-video-controls" onclick="togglePlay()" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
 								<div class="main-controls-top">
-									<h2 class="main-controls-title">Smash Hit Modding &mdash; Custom lights test 2022-08-09 #smashhit</h2>
+									<h2 class="main-controls-title">${video.title}$</h2>
 								</div>
 								<div class="main-controls-bottom">
 									<img id="main-play-button" class="main-controls-item" src="assets/play.svg"/>
@@ -69,16 +70,14 @@
 								</div>
 							</div>
 						</div>
-						<h1>Smash Hit Modding &mdash; Custom lights test 2022-08-09 #smashhit</h1>
+						<h1>${video.title}$</h1>
 					</div>
 					<div class="rs-actions">
-						<p>Uploaded 2022-08-09 by <b>Knot126</b> (<a href="/user/@knot126">@knot126</a>) <button>Subscribe</button></p>
+						<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button>Subscribe</button></p>
 					</div>
 					<div class="rs-desc">
 						<h4>Video Information</h4>
-						<p>This is a demo of a new quick test feature for Smash Hit Blender Tools! Versions 2.0.1 and later will now create an HTTP server for you that can be used with a modded version of Smash Hit to allow quick testing of new segments, somewhat like the builtin editor had.</p>
-						<p>It's still a bit messy to set up perfectly, but it should make editing segments and testing them take a lot less time. Hopefully this will encourage the more impatient creators to make segments and help eliminate the pain of waiting for your APK file to pack.</p>
-						<p>Right now, only the default exporter settings are working. If you still use stone hack, then it won't work in the way that you might want it to. Templates only work if you have APK Editor Studio open with an apk loaded. Mesh baker settings are always the default.</p>
+						${video.info}$
 					</div>
 				</div>
 				<div class="right-side">
