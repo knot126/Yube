@@ -4,22 +4,24 @@
  * 
  **/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');
 
 /* Variables */
 * {
 	padding: 0;
 	margin: 0;
 	
-	--main-colour-light: #10afff;
-	--main-colour: #1c99ff;
+	--main-colour-darker: #1c99ff;
+	--main-colour: #10afff;
+	--main-colour-light: #cae7ff;
 	--secondary-colour: #ffcc00;
+	--secondary-colour-light: #fff6d5;
 	--navbar-text-colour: #fff;
 }
 
 /* Body defaults */
 .body {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Figtree", sans-serif;
 	font-size: 12pt;
 	font-weight: 400;
 }
@@ -46,7 +48,7 @@ button, input[type="submit"] {
 	border-radius: 0.325em;
 	background: var(--secondary-colour);
 	padding: 0.6em;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Figtree", sans-serif;
 	font-size: 12pt;
 	font-weight: 600;
 	color: #000;
@@ -55,7 +57,7 @@ button, input[type="submit"] {
 input[type="text"], input[type="password"] {
 	background: transparent;
 	border: none;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Figtree", sans-serif;
 	font-size: 12pt;
 	font-weight: 400;
 	width: 100%;
@@ -70,7 +72,7 @@ input[type="text"], input[type="password"] {
 /* Navigation bar */
 .navbar {
 	background: var(--main-colour);
-	box-shadow: 0 0 0.5em #0005;
+/* 	box-shadow: 0 0 0.5em #0005; */
 	color: var(--navbar-text-colour);
 	padding: 1em;
 	vertical-align: middle;
@@ -210,6 +212,17 @@ input[type="text"], input[type="password"] {
 	margin-bottom: 1em;
 }
 
+/* Buttons */
+.button-primary {
+	background: var(--main-colour);
+	color: var(--navbar-text-colour);
+}
+
+.button-secondary {
+	background: var(--main-colour-light);
+	color: var(--main-colour);
+}
+
 /* Login popup */
 .login-popup {
 	position: fixed;
@@ -269,3 +282,4 @@ input[type="text"], input[type="password"] {
 .logo {
 	height: 1.8em;
 }
+

@@ -28,8 +28,8 @@
 						</form>
 					</div>
 					<div class="sign-in-bottom">
-						<button class="sign-in-cancel" onclick="hideLogin()">Cancel</button>
-						<button form="login" class="sign-in-submit" type="submit">Sign in</input>
+						<button class="sign-in-cancel button-secondary" onclick="hideLogin()">Cancel</button>
+						<button form="login" class="sign-in-submit button-primary" type="submit">Sign in</input>
 					</div>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 						<h1>${video.title}$</h1>
 					</div>
 					<div class="rs-actions">
-						<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button>Subscribe</button></p>
+						<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p>
 					</div>
 					<div class="rs-desc">
 						<h4>Video Information</h4>
