@@ -16,7 +16,7 @@ def bad_endpoint(self, path, params):
 	"""
 	
 	t = Template("error.template")
-	t.addVariable("error", f"<h1>400 Bad request</h1><p>We had a problem processing your request.</p><p><i>Endpoint: {path[0]}</i></p><p><i>Parameters: {params}</i></p>")
+	t.addVariable("error", f"<h1>400 Bad request</h1><p>We had a problem processing your request.</p><p><i>Endpoint: {path[0]}</i></p><p><i>Parameters: {params}</i></p>", sanitise = False)
 	msg = t.evaluate()
 	
 	self.send_response(400, 'Bad request')

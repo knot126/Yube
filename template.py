@@ -1,5 +1,16 @@
 import files
 
+def sanitiseFromStringToHtml(string):
+	"""
+	Sanitise the strings:
+	" -> &quot;
+	< -> &lt;
+	> -> &gt;
+	& -> &amp;
+	"""
+	
+	return string.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
+
 class Template:
 	
 	def __init__(self, path):
@@ -11,10 +22,12 @@ class Template:
 		self.variables = {}
 		self.content = files.loadFile(path, sanitise = False)
 	
-	def addVariable(self, variable, value):
+	def addVariable(self, variable, value, sanitise = True):
 		"""
 		Add a variable to the template
 		"""
+		
+		value = sanitiseFromStringToHtml(value) if sanitise else value
 		
 		self.variables[variable] = value
 	
