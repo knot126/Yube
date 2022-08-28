@@ -1,19 +1,15 @@
-def loadFile(path, encode = True):
-	f = open(path, "wb")
-	c = f.read()
-	c = c.decode('utf-8') if encode else c
-	f.close()
-	return c
+import files
 
 class Template:
 	
 	def __init__(self, path):
 		"""
-		Load a template string and prepare it for use
+		Load a template string and prepare it for use. Path should never be taken
+		from the user.
 		"""
 		
 		self.variables = {}
-		self.content = loadFile(path)
+		self.content = files.loadFile(path, sanitise = False)
 	
 	def addVariable(self, variable, value):
 		"""
@@ -30,4 +26,6 @@ class Template:
 		c = self.content
 		
 		for v in self.variables.keys():
-			c = self.content.replaceall("${" + v + "}$", self.variables[v])
+			c = c.replace("${" + v + "}$", self.variables[v])
+		
+		return c.encode('utf-8')

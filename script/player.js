@@ -21,11 +21,11 @@ function togglePlay() {
 	
 	if (video.paused) {
 		video.play();
-		playButton.src = "assets/pause.svg";
+		playButton.src = "get-resource/pause.svg";
 	}
 	else {
 		video.pause();
-		playButton.src = "assets/play.svg";
+		playButton.src = "get-resource/play.svg";
 	}
 }
 
