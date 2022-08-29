@@ -47,42 +47,44 @@
 				</div>
 				<div style="float: right;">
 					<ul>
-						<li><button onclick="showLogin()">Sign in</button></li>
+						<li><button class="button-primary" onclick="showLogin()">Sign in</button></li>
 						<li></li>
 					</ul>
 				</div>
 			</div>
 		</header>
 		<main>
-			<div class="before"> </div>
-			<div class="main">
-				<div class="left-side">
-					<div class="rs-vid">
-						<div class="main-video-container">
-							<video id="video" class="main-video" src="${video.file}$" loop></video>
-							<div id="video-controls" class="main-video-controls" onclick="togglePlay()" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
-								<div class="main-controls-top">
-									<h2 class="main-controls-title">${video.title}$</h2>
-								</div>
-								<div class="main-controls-bottom">
-									<img id="main-play-button" class="main-controls-item" src="get-resource/play.svg"/>
-									<p class="main-controls-item">Tap video to pause and play.</p>
+			<div class="site-background">
+				<div class="before"> </div>
+				<div class="main">
+					<div class="left-side">
+						<div class="rs-vid">
+							<div class="main-video-container">
+								<video id="video" class="main-video" src="${video.file}$" loop></video>
+								<div id="video-controls" class="main-video-controls" onclick="togglePlay()" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
+									<div class="main-controls-top">
+										<h2 class="main-controls-title">${video.title}$</h2>
+									</div>
+									<div class="main-controls-bottom">
+										<img id="main-play-button" class="main-controls-item" src="get-resource/play.svg"/>
+										<p class="main-controls-item">Tap video to pause and play.</p>
+									</div>
 								</div>
 							</div>
+							<h1>${video.title}$</h1>
 						</div>
-						<h1>${video.title}$</h1>
+						<div class="rs-actions">
+							<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p>
+						</div>
+						<div class="rs-desc">
+							<h4>Video Information</h4>
+							${video.info}$
+						</div>
 					</div>
-					<div class="rs-actions">
-						<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p>
+					<div class="right-side">
+						<h4>Up next</h4>
+						<p><i>This feature isn't available yet!</i></p>
 					</div>
-					<div class="rs-desc">
-						<h4>Video Information</h4>
-						${video.info}$
-					</div>
-				</div>
-				<div class="right-side">
-					<h4>Up next</h4>
-					<p><i>This feature isn't available yet!</i></p>
 				</div>
 			</div>
 		</main>

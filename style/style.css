@@ -4,24 +4,27 @@
  * 
  **/
 
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 /* Variables */
 * {
 	padding: 0;
 	margin: 0;
 	
-	--main-colour-darker: #1c99ff;
-	--main-colour: #10afff;
-	--main-colour-light: #cae7ff;
+	--main-colour-darker: #16502d;
+	--main-colour: #2ca05a;
+	--main-colour-light: #c7f0d7;
+	--main-colour-background: #effbf4;
 	--secondary-colour: #ffcc00;
 	--secondary-colour-light: #fff6d5;
 	--navbar-text-colour: #fff;
+	
+	--main-font: "Montserrat", sans-serif;
 }
 
 /* Body defaults */
 .body {
-	font-family: "Figtree", sans-serif;
+	font-family: var(--main-font);
 	font-size: 12pt;
 	font-weight: 400;
 }
@@ -45,10 +48,10 @@ a {
 /* Default inputs */
 button, input[type="submit"] {
 	border: none;
-	border-radius: 0.325em;
+	border-radius: 10em;
 	background: var(--secondary-colour);
-	padding: 0.6em;
-	font-family: "Figtree", sans-serif;
+	padding: 0.6em 1.2em;
+	font-family: var(--main-font);
 	font-size: 12pt;
 	font-weight: 600;
 	color: #000;
@@ -57,7 +60,7 @@ button, input[type="submit"] {
 input[type="text"], input[type="password"] {
 	background: transparent;
 	border: none;
-	font-family: "Figtree", sans-serif;
+	font-family: var(--main-font);
 	font-size: 12pt;
 	font-weight: 400;
 	width: 100%;
@@ -71,9 +74,8 @@ input[type="text"], input[type="password"] {
 
 /* Navigation bar */
 .navbar {
-	background: var(--main-colour);
-/* 	box-shadow: 0 0 0.5em #0005; */
-	color: var(--navbar-text-colour);
+	background: var(--main-colour-light);
+	color: var(--main-colour);
 	padding: 1em;
 	vertical-align: middle;
 	font-weight: 600;
@@ -85,8 +87,8 @@ input[type="text"], input[type="password"] {
 }
 
 .navbar a {
-	background: var(--main-colour);
-	color: var(--navbar-text-colour);
+	background: var(--main-colour-light);
+	color: var(--main-colour);
 	text-decoration-line: none;
 }
 
@@ -110,9 +112,15 @@ input[type="text"], input[type="password"] {
 	color: var(--secondary-colour);
 }
 
+/* Main page background */
+.site-background {
+	background: var(--main-colour-background);
+	overflow: auto;
+}
+
 /* Main page */
 .main {
-	max-width: 100em;
+	max-width: 80%;
 	margin: auto;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
@@ -230,26 +238,26 @@ input[type="text"], input[type="password"] {
 	width: 100vw;
 	height: 100vh;
 	z-index: 1001;
-	background: #000d;
-	backdrop-filter: blur(1.0em);
+	background: #0005;
+	backdrop-filter: blur(4.0em);
 }
 
 .popup-box {
-	background: #fff;
-	border-radius: 0.325em;
-	box-shadow: 0 0.5em 1.25em #000;
+	background: var(--main-colour-background);
+	border-radius: 1em;
+	box-shadow: 0 0.5em 1.25em #0004;
 	position: relative;
-	top: calc(50vh - 12.5em);
-	left: calc(50vw - 15em);
-	width: 30em;
-	height: 25em;
+	top: calc(50vh - 20em);
+	left: calc(50vw - 25em);
+	width: 50em;
+	height: 40em;
 }
 
 .popup-box-internal {
 	position: relative;
 	padding: 1em;
 	width: 28em;
-	height: 23em;
+	height: 38em;
 }
 
 .popup-box label {
