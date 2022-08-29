@@ -1,11 +1,12 @@
 import json
+import os
 
 def sanitisePath(unsafe_path):
 	"""
 	Sanitise a file path by removing any harmful or erronious chars
 	"""
 	
-	ALLOWED_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_."
+	ALLOWED_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_."
 	new_path = ""
 	
 	for c in unsafe_path:
@@ -16,17 +17,30 @@ def sanitisePath(unsafe_path):
 
 def loadJson(path, *, sanitise = True):
 	"""
-	Load a json file
+	Load a json file, returning the contents or none if it does not exist
 	"""
 	
 	path = sanitisePath(path) if sanitise else path
 	
 	content = ""
 	
-	with open(path, "r") as f:
-		content = json.load(f)
+	try:
+		with open(path, "r") as f:
+			content = json.load(f)
+	except FileNotFoundError:
+		return None
 	
 	return content
+
+def saveJson(path, content, *, sanitise = True):
+	"""
+	Save a json file
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	
+	with open(path, "w") as f:
+		json.dump(content, f)
 
 def loadFile(path, decode = True, *, sanitise = True):
 	"""
@@ -40,3 +54,20 @@ def loadFile(path, decode = True, *, sanitise = True):
 	f.close()
 	return c
 
+def create_folder(path, *, sanitise = True):
+	"""
+	Create a folder, including any folders needed to create that folder
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	
+	os.makedirs(path, exist_ok = True)
+
+def delete(path, *, sanitise = True):
+	"""
+	Delete a file
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	
+	os.remove(path)
