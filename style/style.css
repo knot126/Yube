@@ -15,11 +15,22 @@
 	--main-colour: #2ca05a;
 	--main-colour-light: #c7f0d7;
 	--main-colour-background: #effbf4;
+	--main-colour-text: #000;
 	--secondary-colour: #ffcc00;
 	--secondary-colour-light: #fff6d5;
 	--navbar-text-colour: #fff;
 	
 	--main-font: "Montserrat", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+	* {
+		--main-colour-darker: #16502d;
+		--main-colour: #2ca05a;
+		--main-colour-light: #0b2817;
+		--main-colour-background: #060e09;
+		--main-colour-text: #effbf4;
+	}
 }
 
 /* Body defaults */
@@ -115,6 +126,7 @@ input[type="text"], input[type="password"] {
 /* Main page background */
 .site-background {
 	background: var(--main-colour-background);
+	color: var(--main-colour-text);
 	overflow: auto;
 }
 
