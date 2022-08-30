@@ -2,7 +2,7 @@ import files
 from template import Template
 from database import DatabaseFolder
 
-def watch(self, path, params):
+def watch(self, path, params, kind):
 	"""
 	Handles watching videos
 	"""
@@ -38,4 +38,8 @@ def watch(self, path, params):
 	self.send_response(200, "OK")
 	self.send_header("Content-Length", str(length))
 	self.end_headers()
+	
+	if (kind == "HEAD"):
+		return
+	
 	self.wfile.write(content)

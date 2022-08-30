@@ -71,11 +71,15 @@ class YuHandler(BaseHTTPRequestHandler):
 		endpoint = path[0]
 		
 		# Handle the request
-		if (endpoint in YU_ENDPOINTS):
-			YU_ENDPOINTS[endpoint](self, path, params)
-		else:
-			# Redirect to bad-endpoint if endpoint is not valid
-			YU_ENDPOINTS['bad-endpoint'](self, path, params)
+		(YU_ENDPOINTS.get(endpoint, YU_ENDPOINTS["bad-endpoint"]))(self, path, params, "GET")
+	
+	def do_HEAD(self):
+		path, params = parsePath(self.path)
+		
+		endpoint = path[0]
+		
+		# Handle the request
+		(YU_ENDPOINTS.get(endpoint, YU_ENDPOINTS["bad-endpoint"]))(self, path, params, "HEAD")
 
 def main():
 	server = ThreadingHTTPServer(('0.0.0.0', 8000), YuHandler)

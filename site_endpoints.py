@@ -10,7 +10,7 @@ def not_found(self, path, params):
 	self.send_header("Content-Length", "0")
 	self.send_header()
 
-def bad_endpoint(self, path, params):
+def bad_endpoint(self, path, params, kind):
 	"""
 	Handle a bad endpoint being called on
 	"""
@@ -23,9 +23,13 @@ def bad_endpoint(self, path, params):
 	self.send_header("Content-Length", str(len(msg)))
 	self.send_header("Content-Type", "text/html")
 	self.end_headers()
+	
+	if (kind == "HEAD"):
+		return
+	
 	self.wfile.write(msg)
 
-def get_site_resource(self, path, params):
+def get_site_resource(self, path, params, kind):
 	"""
 	Send a resource from the table of allowed resources
 	"""
@@ -49,6 +53,10 @@ def get_site_resource(self, path, params):
 		self.send_header("Content-Length", str(len(data)))
 		self.send_header("Content-Type", resource_table[path[1]][1])
 		self.end_headers()
+		
+		if (kind == "HEAD"):
+			return
+		
 		self.wfile.write(data)
 	
 	except FileNotFoundError:
