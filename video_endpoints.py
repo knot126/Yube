@@ -45,23 +45,58 @@ def watch(self, path, params, kind):
 	
 	self.wfile.write(content)
 
+def toInt2(n):
+	"""
+	Alternate toInt for parseRange
+	"""
+	
+	if (n): return int(n)
+	return None
+
+def parseRange(string):
+	"""
+	Parse HTTP/1.1 range string
+	"""
+	
+	part = string.split("=")[1].split("-")
+	
+	return [toInt2(part[i]) for i in range(len(part))]
+
 def get_video_data(self, path, params, kind):
 	"""
 	Get the video data, or at least one range of video data
 	"""
 	
 	db = DatabaseFolder("video_storage")
-	
 	size = db.get_size(path[1])
+	part = self.headers.get("Range", None)
 	
-	self.send_response(200, "OK")
-	self.send_header("Accept-Ranges", "none") # TODO: Accept ranges in the future
-	self.send_header("Content-Length", str(size))
-	self.end_headers()
-	
-	if (kind == "HEAD"):
-		return
-	
-	content = db.read_bytes(path[1], 0, size)
-	
-	self.wfile.write(content)
+	if (part == None):
+		self.send_response(200, "OK")
+		self.send_header("Accept-Ranges", "bytes")
+		self.send_header("Content-Length", str(size))
+		self.end_headers()
+		
+		if (kind == "HEAD"):
+			return
+		
+		content = db.read_bytes(path[1], 0, size)
+		self.wfile.write(content)
+	else:
+		part = parseRange(part)
+		
+		# Find start and end
+		start = part[0]
+		end = part[1] if part[1] else (size - 1)
+		
+		self.send_response(206, "Partial content")
+		self.send_header("Accept-Ranges", "bytes")
+		self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+		self.send_header("Content-Length", str(end - start + 1))
+		self.end_headers()
+		
+		if (kind == "HEAD"):
+			return
+		
+		content = db.read_bytes(path[1], start, end + 1)
+		self.wfile.write(content)
