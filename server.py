@@ -13,6 +13,7 @@ YU_ENDPOINTS = {
 	"bad-endpoint": site_endpoints.bad_endpoint,
 	"get-resource": site_endpoints.get_site_resource,
 	"watch": video_endpoints.watch,
+	"get-video-data": video_endpoints.get_video_data,
 }
 
 def parsePath(path):

@@ -26,6 +26,7 @@ def watch(self, path, params, kind):
 	
 	# Create the page content
 	t = Template("video.template")
+	t.addVariable("video.id", video_id)
 	t.addVariable("video.title", video["title"])
 	t.addVariable("video.date", video["date"])
 	t.addFormattedVariable("video.info", video["info"])
@@ -41,5 +42,26 @@ def watch(self, path, params, kind):
 	
 	if (kind == "HEAD"):
 		return
+	
+	self.wfile.write(content)
+
+def get_video_data(self, path, params, kind):
+	"""
+	Get the video data, or at least one range of video data
+	"""
+	
+	db = DatabaseFolder("video_storage")
+	
+	size = db.get_size(path[1])
+	
+	self.send_response(200, "OK")
+	self.send_header("Accept-Ranges", "none") # TODO: Accept ranges in the future
+	self.send_header("Content-Length", str(size))
+	self.end_headers()
+	
+	if (kind == "HEAD"):
+		return
+	
+	content = db.read_bytes(path[1], 0, size)
 	
 	self.wfile.write(content)

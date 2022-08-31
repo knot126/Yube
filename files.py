@@ -54,6 +54,49 @@ def loadFile(path, decode = True, *, sanitise = True):
 	f.close()
 	return c
 
+def file_length(path, *, sanitise = True):
+	"""
+	Get the size of the file at path
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	
+	# get file size
+	return os.path.getsize(path)
+
+def file_read_part(path, start, end, *, sanitise = True):
+	"""
+	Read part of a file's contents. Only intended for binary files
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	
+	# Get end if None
+	if (end == None):
+		end = file_length(path, sanitise = False) # Already sanitised if that is wanted
+	
+	# Find length to read
+	length = end - start
+	
+	# Read content
+	f = open(path, "rb")
+	f.seek(start)
+	c = f.read(length)
+	f.close()
+	
+	return c
+
+def file_append(path, content, encode = False, *, sanitise = True):
+	"""
+	Append more content to the end of a file, optionally encoding it
+	"""
+	
+	path = sanitisePath(path) if sanitise else path
+	f = open(path, "a") if encode else open(path, "ab")
+	c = content.encode('utf-8') if encode else c
+	f.write(c)
+	f.close()
+
 def create_folder(path, *, sanitise = True):
 	"""
 	Create a folder, including any folders needed to create that folder

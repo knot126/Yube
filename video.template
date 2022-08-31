@@ -60,7 +60,7 @@
 					<div class="left-side">
 						<div class="rs-vid">
 							<div class="main-video-container">
-								<video id="video" class="main-video" src="${video.file}$" loop></video>
+								<video id="video" class="main-video" src="/get-video-data/${video.id}$" loop></video>
 								<div id="video-controls" class="main-video-controls" onclick="togglePlay()" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
 									<div class="main-controls-top">
 										<h2 class="main-controls-title">${video.title}$</h2>
