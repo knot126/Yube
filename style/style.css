@@ -35,6 +35,7 @@
 
 /* Body defaults */
 .body {
+	background: var(--main-colour-background);
 	font-family: var(--main-font);
 	font-size: 12pt;
 	font-weight: 400;
@@ -125,7 +126,7 @@ input[type="text"], input[type="password"] {
 
 /* Main page background */
 .site-background {
-	background: var(--main-colour-background);
+/* 	background: var(--main-colour-background); */
 	color: var(--main-colour-text);
 	overflow: auto;
 }

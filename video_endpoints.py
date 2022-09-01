@@ -53,6 +53,10 @@ def toInt2(n):
 	if (n): return int(n)
 	return None
 
+##
+## TODO: Support for multipule ranges
+##
+
 def parseRange(string):
 	"""
 	Parse HTTP/1.1 range string

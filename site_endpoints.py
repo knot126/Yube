@@ -29,6 +29,25 @@ def bad_endpoint(self, path, params, kind):
 	
 	self.wfile.write(msg)
 
+def home(self, path, params, kind):
+	"""
+	Temp home page
+	"""
+	
+	t = Template("error.template")
+	t.addVariable("error", f"<h1>Welcome to yuBe!</h1><p>Many of our pages like home, videos, recent and popular aren't ready yet!</p><p>Click here for sample video:<br/><a href=\"http://localhost:8000/watch?video=PROkfP3tpXrQrth_uZ0NQM0u\">http://localhost:8000/watch?video=PROkfP3tpXrQrth_uZ0NQM0u</a></p>", sanitise = False)
+	msg = t.evaluate()
+	
+	self.send_response(200, 'OK')
+	self.send_header("Content-Length", str(len(msg)))
+	self.send_header("Content-Type", "text/html")
+	self.end_headers()
+	
+	if (kind == "HEAD"):
+		return
+	
+	self.wfile.write(msg)
+
 def get_site_resource(self, path, params, kind):
 	"""
 	Send a resource from the table of allowed resources

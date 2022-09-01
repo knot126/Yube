@@ -11,6 +11,11 @@ import video_endpoints
 
 YU_ENDPOINTS = {
 	"bad-endpoint": site_endpoints.bad_endpoint,
+	"": site_endpoints.home,
+	"home": site_endpoints.home,
+	"videos": site_endpoints.home,
+	"recent": site_endpoints.home,
+	"popular": site_endpoints.home,
 	"get-resource": site_endpoints.get_site_resource,
 	"watch": video_endpoints.watch,
 	"get-video-data": video_endpoints.get_video_data,

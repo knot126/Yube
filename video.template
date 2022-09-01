@@ -61,13 +61,14 @@
 						<div class="rs-vid">
 							<div class="main-video-container">
 								<video id="video" class="main-video" src="/get-video-data/${video.id}$" loop></video>
-								<div id="video-controls" class="main-video-controls" onclick="togglePlay()" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
+								<div id="video-controls" class="main-video-controls" onload="initPlayer()" onmouseout="playerToggleHover()" onmouseover="playerToggleHover()">
 									<div class="main-controls-top">
 										<h2 class="main-controls-title">${video.title}$</h2>
 									</div>
+									<div style="background: #fff8; height: 0.3em; border-radius: 0.15em; margin: 0 1em 0 1em;"><div id="main-controls-progress" style="background: var(--main-colour); height: 0.3em; width: 50%; border-radius: 0.15em;"></div></div>
 									<div class="main-controls-bottom">
-										<img id="main-play-button" class="main-controls-item" src="get-resource/play.svg"/>
-										<p class="main-controls-item">Tap video to pause and play.</p>
+										<img id="main-play-button" class="main-controls-item" src="get-resource/play.svg" onclick="togglePlay()"/>
+										<p id="main-controls-time" class="main-controls-item">0:00</p>
 									</div>
 								</div>
 							</div>
