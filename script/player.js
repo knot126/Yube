@@ -29,18 +29,6 @@ function togglePlay() {
 	}
 }
 
-function showLogin() {
-	let popup = document.getElementById("login-popup");
-	
-	popup.style.display = "inherit";
-}
-
-function hideLogin() {
-	let popup = document.getElementById("login-popup");
-	
-	popup.style.display = "none";
-}
-
 function secondsToString(sec) {
 	/**
 	 * Convert seconds to a formatted string

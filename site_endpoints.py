@@ -57,6 +57,7 @@ def get_site_resource(self, path, params, kind):
 	resource_table = {
 		"style.css": ["style/style.css", "text/css"],
 		"player.js": ["script/player.js", "text/javascript"],
+		"login.js": ["script/login.js", "text/javascript"],
 		"icon.svg": ["favicon.svg", "image/svg+xml"],
 		"icon.png": ["favicon.png", "image/png"],
 		"pause.svg": ["assets/pause.svg", "image/svg+xml"],

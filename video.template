@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>${video.title}$ &mdash; yuBe</title>
-		<link rel="icon" type="image/svg+xml" href="get-resource/icon.svg"/>
-		<link rel="stylesheet" type="text/css" href="get-resource/style.css"/>
-		<script src="get-resource/player.js"></script>
+		<link rel="icon" type="image/svg+xml" href="/get-resource/icon.svg"/>
+		<link rel="stylesheet" type="text/css" href="/get-resource/style.css"/>
+		<script src="/get-resource/player.js"></script>
+		<script src="/get-resource/login.js"></script>
 	</head>
 	<body class="body">
 		<div id="login-popup" class="login-popup" style="display: none;">
@@ -29,7 +30,7 @@
 					</div>
 					<div class="sign-in-bottom">
 						<button class="sign-in-cancel button-secondary" onclick="hideLogin()">Cancel</button>
-						<button form="login" class="sign-in-submit button-primary" type="submit">Sign in</input>
+						<button form="login" class="sign-in-submit button-primary" onclick="startLogin()">Sign in</input>
 					</div>
 				</div>
 			</div>
