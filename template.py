@@ -64,7 +64,7 @@ class Template:
 		"""
 		
 		self.variables = {}
-		self.content = files.loadFile(path, sanitise = False)
+		self.content = files.loadFile("template/" + path, sanitise = False)
 	
 	def addVariable(self, variable, value, sanitise = True):
 		"""
