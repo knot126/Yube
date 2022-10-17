@@ -6,8 +6,11 @@ yu.be server
 import os, sys
 from http.server import BaseHTTPRequestHandler, HTTPServer, ThreadingHTTPServer
 
+# TODO: Make loading endpoints a config option and allow dynamic loading of
+# endpoints.
 import site_endpoints
 import video_endpoints
+import auth_endpoints
 
 YU_ENDPOINTS = {
 	"bad-endpoint": site_endpoints.bad_endpoint,

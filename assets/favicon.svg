@@ -7,7 +7,7 @@
    viewBox="0 0 33.866666 33.866666"
    version="1.1"
    id="svg12"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
    sodipodi:docname="favicon.svg"
    inkscape:export-filename="favicon.png"
    inkscape:export-xdpi="48"
@@ -28,8 +28,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="6.265625"
-     inkscape:cx="64.239401"
-     inkscape:cy="64.319202"
+     inkscape:cx="27.850374"
+     inkscape:cy="64.478803"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -51,7 +51,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;fill:#d7f4e3;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       style="opacity:1;fill:#de87aa;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
        id="rect1224"
        width="33.866665"
        height="33.866665"
@@ -59,7 +59,7 @@
        y="0"
        ry="5.68226" />
     <path
-       style="fill:#2ca05a;stroke:#2ca05a;stroke-width:4.17265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#782144;stroke:#782144;stroke-width:4.17265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="M 8.248156,8.2482195 25.61844,16.933362 8.248156,25.618504 Z"
        id="path369" />
   </g>

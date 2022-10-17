@@ -4,34 +4,29 @@
  * 
  **/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* Variables */
 * {
 	padding: 0;
 	margin: 0;
 	
-	--main-colour-darker: #16502d;
-	--main-colour: #2ca05a;
-	--main-colour-light: #c7f0d7;
-	--main-colour-background: #effbf4;
+	--main-colour: #c83771;
+	--main-colour-darker: #a02c5a;
+	--main-colour-light: #f4d7e3;
+	--main-colour-background: #fff;
 	--main-colour-text: #000;
-	--secondary-colour: #ffcc00;
-	--secondary-colour-light: #fff6d5;
+	--secondary-colour: #71c837;
 	--navbar-text-colour: #fff;
 	
-	--main-font: "Montserrat", sans-serif;
+	--main-font: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
 	* {
-		--main-colour-darker: #16502d;
-		--main-colour: #2ca05a;
-		--main-colour-light: #0b2817;
-		--main-colour-background: #060e09;
-		--main-colour-text: #effbf4;
+		
 	}
-}
+}*/
 
 /* Body defaults */
 .body {
@@ -60,7 +55,7 @@ a {
 /* Default inputs */
 button, input[type="submit"] {
 	border: none;
-	border-radius: 10em;
+	border-radius: 0.325em;
 	background: var(--secondary-colour);
 	padding: 0.6em 1.2em;
 	font-family: var(--main-font);
@@ -72,22 +67,33 @@ button, input[type="submit"] {
 input[type="text"], input[type="password"] {
 	background: transparent;
 	border: none;
+	caret-color: var(--main-colour);
 	font-family: var(--main-font);
 	font-size: 12pt;
 	font-weight: 400;
 	width: 100%;
 	outline: none;
+	
+	border-bottom: 0.125em solid #ccc;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	transition: border 0.2s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	border-bottom: 0.125em solid var(--main-colour);
 }
 
 /* Selection */
 ::selection {
-	background: var(--main-colour-light);
+	background: var(--main-colour);
+	color: var(--navbar-text-colour);
 }
 
 /* Navigation bar */
 .navbar {
-	background: var(--main-colour-light);
-	color: var(--main-colour);
+	background: var(--main-colour);
+	color: #fff;
 	padding: 1em;
 	vertical-align: middle;
 	font-weight: 600;
@@ -99,8 +105,7 @@ input[type="text"], input[type="password"] {
 }
 
 .navbar a {
-	background: var(--main-colour-light);
-	color: var(--main-colour);
+	color: var(--navbar-text-colour);
 	text-decoration-line: none;
 }
 
@@ -124,9 +129,16 @@ input[type="text"], input[type="password"] {
 	color: var(--secondary-colour);
 }
 
+.logo {
+	transition: opacity 0.1s;
+}
+
+.logo:hover {
+	opacity: 0.9;
+}
+
 /* Main page background */
 .site-background {
-/* 	background: var(--main-colour-background); */
 	color: var(--main-colour-text);
 	overflow: auto;
 }
@@ -237,11 +249,21 @@ input[type="text"], input[type="password"] {
 .button-primary {
 	background: var(--main-colour);
 	color: var(--navbar-text-colour);
+	transition: background 0.3s;
+}
+
+.button-primary:hover {
+	background: var(--main-colour-darker);
 }
 
 .button-secondary {
-	background: var(--main-colour-light);
+	background: var(--main-background);
 	color: var(--main-colour);
+	transition: background 0.3s;
+}
+
+.button-secondary:hover {
+	background: var(--main-colour-light);
 }
 
 /* Login popup */
@@ -257,19 +279,20 @@ input[type="text"], input[type="password"] {
 
 .popup-box {
 	background: var(--main-colour-background);
-	border-radius: 1em;
+	border-radius: 0.325em;
 	box-shadow: 0 0.5em 1.25em #0004;
 	position: relative;
 	top: calc(50vh - 20em);
 	left: calc(50vw - 25em);
 	width: 50em;
 	height: 40em;
+	transition: display 0.3s;
 }
 
 .popup-box-internal {
 	position: relative;
 	padding: 1em;
-	width: 28em;
+	width: 48em;
 	height: 38em;
 }
 
@@ -286,7 +309,7 @@ input[type="text"], input[type="password"] {
 
 .sign-in-bottom {
 	position: absolute;
-	width: 28em;
+	width: 48em;
 	bottom: 1em;
 	left: 1em;
 }

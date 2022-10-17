@@ -7,7 +7,7 @@
    viewBox="0 0 101.6 33.866666"
    version="1.1"
    id="svg12"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
    sodipodi:docname="logo.svg"
    inkscape:export-filename="favicon.png"
    inkscape:export-xdpi="96"
@@ -28,8 +28,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="4.6276042"
-     inkscape:cx="192.43219"
-     inkscape:cy="64.396173"
+     inkscape:cx="192.64828"
+     inkscape:cy="64.612267"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -51,7 +51,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:0;fill:#2ca05a;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       style="opacity:0;fill:#ffffff;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
        id="rect1224"
        width="101.6"
        height="33.866665"
@@ -59,19 +59,20 @@
        y="0"
        ry="5.68226" />
     <path
-       style="fill:#2ca05a;stroke:#2ca05a;stroke-width:4.17265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:4.17265;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="M 8.248156,8.2482195 25.61844,16.933362 8.248156,25.618504 Z"
        id="path369" />
     <text
        xml:space="preserve"
-       style="font-size:22.9858px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';fill:#2ca05a;stroke-width:1.43661"
-       x="32.827034"
-       y="24.897942"
-       id="text251"><tspan
+       style="font-size:25.3852px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';fill:#ffffff;stroke-width:1.58657"
+       x="29.575691"
+       y="27.496902"
+       id="text251"
+       transform="scale(1.1043846,0.9054817)"><tspan
          sodipodi:role="line"
          id="tspan249"
-         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:'Montserrat Heavy';fill:#2ca05a;stroke-width:1.43661"
-         x="32.827034"
-         y="24.897942">yuBe</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Overpass;-inkscape-font-specification:Overpass;fill:#ffffff;stroke-width:1.58657"
+         x="29.575691"
+         y="27.496902">yube</tspan></text>
   </g>
 </svg>
