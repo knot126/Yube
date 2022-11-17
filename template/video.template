@@ -27,10 +27,11 @@
 								<input id="password" name="password" type="password" placeholder="Password" />
 							</div>
 						</form>
+						<p id="login-message"></p>
 					</div>
 					<div class="sign-in-bottom">
 						<button class="sign-in-cancel button-secondary" onclick="hideLogin()">Cancel</button>
-						<button form="login" class="sign-in-submit button-primary" onclick="startLogin()">Sign in</input>
+						<button class="sign-in-submit button-primary" onclick="startLogin()">Sign in</input>
 					</div>
 				</div>
 			</div>

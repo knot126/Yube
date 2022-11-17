@@ -28,8 +28,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="4.6276042"
-     inkscape:cx="192.64828"
-     inkscape:cy="64.612267"
+     inkscape:cx="193.08047"
+     inkscape:cy="64.828362"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -64,15 +64,14 @@
        id="path369" />
     <text
        xml:space="preserve"
-       style="font-size:25.3852px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';fill:#ffffff;stroke-width:1.58657"
-       x="29.575691"
-       y="27.496902"
-       id="text251"
-       transform="scale(1.1043846,0.9054817)"><tspan
+       style="font-size:22.5778px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';fill:#ffffff;stroke-width:0.264583"
+       x="35.241344"
+       y="25.091356"
+       id="text282"><tspan
          sodipodi:role="line"
-         id="tspan249"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Overpass;-inkscape-font-specification:Overpass;fill:#ffffff;stroke-width:1.58657"
-         x="29.575691"
-         y="27.496902">yube</tspan></text>
+         id="tspan280"
+         style="font-size:22.5778px;fill:#ffffff;stroke-width:0.264583;font-weight:bold"
+         x="35.241344"
+         y="25.091356">Yube</tspan></text>
   </g>
 </svg>

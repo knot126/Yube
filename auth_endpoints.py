@@ -4,10 +4,12 @@ might try to take advantage of!
 """
 from template import Template
 import json
+import authdb
 
 MAX_STRING_SIZE = 5120
 
 ERROR_STATUS_STRING = {
+	200: "Okay",
 	400: "Bad request",
 	401: "Unauthorised",
 	402: "Payment required",
@@ -23,14 +25,17 @@ ERROR_STATUS_STRING = {
 	600: "Stop drinking",
 }
 
-def error(self, number):
+def error(self, number, message = "{}"):
 	"""
 	Send an 4xx or 5xx error
 	"""
 	
 	self.send_response(number, ERROR_STATUS_STRING[number])
-	self.send_header("Content-Length", "0")
-	self.send_header()
+	self.send_header("Content-Length", str(len(message)))
+	self.end_headers()
+	self.wfile.write(message.encode("utf-8"))
+
+respond = error
 
 def load_post_data(self, path, params, kind):
 	"""
@@ -50,12 +55,12 @@ def load_post_data(self, path, params, kind):
 	content_length = int(self.headers["Content-Length"])
 	
 	# Check if content is too long or too short
-	if (content_length == 0 and content_legnth > MAX_STRING_SIZE):
+	if (content_length == 0 and content_length > MAX_STRING_SIZE):
 		error(self, 413)
 		return
 	
 	# Read in the data
-	data = self.rfile.read(content_legnth)
+	data = self.rfile.read(content_length)
 	
 	# Decode the bytes to a string
 	data = data.decode("utf-8")
@@ -88,12 +93,16 @@ def login(self, path, params, kind):
 	permissions = info.get("permissions", None)
 	
 	if (not username or not password or not permissions):
-		return error(self, 400)
+		return error(self, 400, "{\"status\": \"failed\", \"message\": \"Invalid username or password or permissions not given.\"}")
 	
-	# TODO: You need to implement authdb first :)
 	db = authdb.AuthDB()
 	
+	# Generate token from username and password
 	token = db.generateToken(username, password, permissions)
 	
+	# Send message if failed
 	if (not token):
-		return error(self, 403)
+		return error(self, 403, "{\"status\": \"failed\", \"message\": \"Wrong username or password or the account might not exist.\"}")
+	
+	# Send message if succeded
+	respond(self, 200, f"{{\"status\": \"success\", \"message\": \"Login was successful!\", \"token\": \"{token}\"}}")

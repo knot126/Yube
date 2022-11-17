@@ -22,6 +22,7 @@ YU_ENDPOINTS = {
 	"get-resource": site_endpoints.get_site_resource,
 	"watch": video_endpoints.watch,
 	"get-video-data": video_endpoints.get_video_data,
+	"login": auth_endpoints.login,
 }
 
 def parsePath(path):
@@ -72,7 +73,7 @@ class YuHandler(BaseHTTPRequestHandler):
 	
 	def do_GET(self):
 		"""
-		Handle a get request
+		Handle a GET request
 		"""
 		
 		path, params = parsePath(self.path)
@@ -83,12 +84,28 @@ class YuHandler(BaseHTTPRequestHandler):
 		(YU_ENDPOINTS.get(endpoint, YU_ENDPOINTS["bad-endpoint"]))(self, path, params, "GET")
 	
 	def do_HEAD(self):
+		"""
+		Handle a HEAD request
+		"""
+		
 		path, params = parsePath(self.path)
 		
 		endpoint = path[0]
 		
 		# Handle the request
 		(YU_ENDPOINTS.get(endpoint, YU_ENDPOINTS["bad-endpoint"]))(self, path, params, "HEAD")
+	
+	def do_POST(self):
+		"""
+		Handle a POST request
+		"""
+		
+		path, params = parsePath(self.path)
+		
+		endpoint = path[0]
+		
+		# Handle the request
+		(YU_ENDPOINTS.get(endpoint, YU_ENDPOINTS["bad-endpoint"]))(self, path, params, "POST")
 
 def main():
 	server = ThreadingHTTPServer(('0.0.0.0', 8000), YuHandler)
