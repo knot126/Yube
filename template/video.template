@@ -40,7 +40,6 @@
 			<div class="navbar">
 				<div style="float: left;">
 					<ul>
-<!-- 						<li><span class="navbar-logo">yu<span class="navbar-logo-a">Be</span></span></li> -->
 						<img class="logo" src="get-resource/logo.svg"/>
 						<li><a href="/">Home</a></li>
 						<li><a href="/videos">Videos</a></li>
@@ -49,7 +48,7 @@
 				</div>
 				<div style="float: right;">
 					<ul>
-						<li><button class="button-primary" onclick="showLogin()">Sign in</button></li>
+						<li id="user-link"><button class="button-primary" onclick="showLogin()">Sign in</button></li>
 						<li></li>
 					</ul>
 				</div>
@@ -91,8 +90,8 @@
 				</div>
 			</div>
 		</main>
-		<footer>
-			
-		</footer>
 	</body>
+	<script>
+		updateLoginStatus();
+	</script>
 </html>

@@ -16,7 +16,10 @@ function requestLogin() {
 	let response = JSON.parse(this.responseText);
 	
 	if (status == 200) {
-		message.innerHTML = "Login successful.";
+		message.innerHTML = response["message"];
+		window.localStorage.setItem("login_token", response["token"]);
+		window.localStorage.setItem("login_username", response["username"]);
+		updateLoginStatus();
 		hideLogin();
 	}
 	else if (status == 404 || status == 501) {
@@ -33,6 +36,17 @@ function startLogin() {
 	let password = document.getElementById("password").value;
 	
 	request.addEventListener("loadend", requestLogin);
-	request.open("POST", "/login", false);
+	request.open("POST", "/login");
 	request.send("{\"type\": \"login\", \"username\": \"" + username + "\", \"password\": \"" + password + "\", \"permissions\": [\"base\", \"interact\", \"subscribe\", \"comment\", \"upload\", \"edit\", \"stats\"]}");
+}
+
+function updateLoginStatus() {
+	let username = window.localStorage.getItem("login_username");
+	let menu = document.getElementById("user-link");
+	
+	console.log(username, menu);
+	
+	if (username && menu) {
+		menu.innerHTML = "<a href=\"/user/@" + username + "\">" + username + "</a>";
+	}
 }

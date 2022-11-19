@@ -1,5 +1,63 @@
 from database import DatabaseFolder
-import secrets
+import secrets, hashlib
+
+def CreatePasswordString(password, salt, method = "sha3-384-sp"):
+	"""
+	Salts, peppers, hashes and packs a password
+	
+	https://snyk.io/learn/password-storage-best-practices/
+	https://www.password-hashing.net
+	
+	There are things that I don't know that I don't know which is what makes this
+	very naive
+	
+	TODO WARNING Should really implement a good hash function like argon2 which
+	are very slow/compute intesive on purpose so that brute force attacks are
+	not practically possible.
+	"""
+	
+	match (method):
+		case "plaintext":
+			return "plaintext:" + password
+		
+		case "sha3-384-sp":
+			password = "b​" + password + "@" + salt
+			
+			hasher = hashlib.sha3_384()
+			
+			for i in range(5000):
+				password = hasher.update(password).hexdigest()
+			
+			return "sha3-384-sp:" + password + ":" + salt
+
+def ParsePasswordString(string):
+	"""
+	Parse a string to a formatted password string
+	"""
+	
+	string = string.split(":")
+	
+	method = string[0]
+	hash = string[1]
+	salt = None
+	
+	if ((method.endswith("-sp") or method.endswith("-s")) and (len(string) > 2)):
+		salt = string[2]
+	
+	return (method, hash, salt)
+
+def ComparePasswordToPasswordString(password, string):
+	"""
+	Compare a password to a password string
+	
+	Return True if the same, False if different
+	"""
+	
+	method, hash, salt = ParsePasswordString(string)
+	
+	canditate_password = CreatePasswordString(password, salt, method)
+	
+	return True if (canditate_password == string) else False
 
 class AuthDB():
 	"""
@@ -23,8 +81,14 @@ class AuthDB():
 		Check that the user's password and the challenge password are the same
 		"""
 		
-		# WARNING TODO actually implement user passwords
-		return True
+		# Read in user info
+		user = self.user_db.read(username)
+		
+		# Compare the password to the user's current password string
+		result = ComparePasswordToPasswordString(password, user["password"])
+		
+		# Return the result
+		return result
 	
 	def generateToken(self, username, password, permissions):
 		"""

@@ -32,6 +32,7 @@ def error(self, number, message = "{}"):
 	
 	self.send_response(number, ERROR_STATUS_STRING[number])
 	self.send_header("Content-Length", str(len(message)))
+	self.send_header("Content-Type", "application/json")
 	self.end_headers()
 	self.wfile.write(message.encode("utf-8"))
 
@@ -44,19 +45,19 @@ def load_post_data(self, path, params, kind):
 	
 	# GET doesn't make sense
 	if (kind == "GET" or kind == "HEAD"):
-		error(self, 405)
+		error(self, 405, "{\"status\": \"failed\", \"message\": \"Bad type of request.\"}")
 		return
 	
 	# Get content length
 	if (self.headers.get("Content-Length", None) == None):
-		error(self, 411)
+		error(self, 411, "{\"status\": \"failed\", \"message\": \"Unknown content length.\"}")
 		return
 	
 	content_length = int(self.headers["Content-Length"])
 	
 	# Check if content is too long or too short
 	if (content_length == 0 and content_length > MAX_STRING_SIZE):
-		error(self, 413)
+		error(self, 413, "{\"status\": \"failed\", \"message\": \"Request is too long to process.\"}")
 		return
 	
 	# Read in the data
@@ -105,4 +106,4 @@ def login(self, path, params, kind):
 		return error(self, 403, "{\"status\": \"failed\", \"message\": \"Wrong username or password or the account might not exist.\"}")
 	
 	# Send message if succeded
-	respond(self, 200, f"{{\"status\": \"success\", \"message\": \"Login was successful!\", \"token\": \"{token}\"}}")
+	respond(self, 200, f"{{\"status\": \"success\", \"message\": \"Login was successful!\", \"username\": \"{username}\", \"token\": \"{token}\"}}")
