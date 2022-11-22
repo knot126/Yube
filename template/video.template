@@ -5,6 +5,7 @@
 		<title>${video.title}$ &mdash; yuBe</title>
 		<link rel="icon" type="image/svg+xml" href="/get-resource/icon.svg"/>
 		<link rel="stylesheet" type="text/css" href="/get-resource/style.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="/get-resource/player.js"></script>
 		<script src="/get-resource/login.js"></script>
 	</head>
@@ -19,11 +20,11 @@
 					<div class="sign-in-centre">
 						<form id="login">
 							<div class="sign-in-feild">
-								<label for="username">Username</label><br/>
+<!-- 								<label for="username">Username</label><br/> -->
 								<input id="username" name="username" type="text" placeholder="Username" />
 							</div>
 							<div class="sign-in-feild">
-								<label for="password">Password</label><br/>
+<!-- 								<label for="password">Password</label><br/> -->
 								<input id="password" name="password" type="password" placeholder="Password" />
 							</div>
 						</form>
@@ -41,9 +42,9 @@
 				<div style="float: left;">
 					<ul>
 						<img class="logo" src="get-resource/logo.svg"/>
-						<li><a href="/">Home</a></li>
-						<li><a href="/videos">Videos</a></li>
-						<li><a href="/recent">Recent</a></li>
+						<li><a href="/"><i class="material-icons">home</i> Home</a></li>
+						<li><a href="/videos"><i class="material-icons">video_library</i> Videos</a></li>
+						<li><a href="/recent"><i class="material-icons">update</i> Recent</a></li>
 					</ul>
 				</div>
 				<div style="float: right;">
@@ -76,7 +77,16 @@
 							<h1>${video.title}$</h1>
 						</div>
 						<div class="rs-actions">
-							<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p>
+<!-- 							<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p> -->
+							<div class="box">
+								<div class="box-half-left">
+									<p><b>${channel.name}$</b></p>
+									<p><a href="/user/${channel.lower}$">${channel.lower}$</a></p>
+								</div>
+								<div class="box-half-right box-align-right">
+									<p><button class="button-primary">Subscribe</button></p>
+								</div>
+							</div>
 						</div>
 						<div class="rs-desc">
 							<h4>Video Information</h4>

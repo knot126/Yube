@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280"
+   height="800"
+   viewBox="0 0 338.66666 211.66667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   sodipodi:docname="design-login-1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.0025"
+     inkscape:cx="640.89776"
+     inkscape:cy="400.99751"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter353"
+       x="-0.060472441"
+       y="-0.072566926"
+       width="1.1209449"
+       height="1.160252">
+      <feFlood
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood343" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite345" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="4"
+         result="blur"
+         id="feGaussianBlur347" />
+      <feOffset
+         dx="0"
+         dy="2"
+         result="offset"
+         id="feOffset349" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite351" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter353-3"
+       x="-0.3023622"
+       y="-0.90708664"
+       width="1.6047244"
+       height="3.0031497">
+      <feFlood
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood343-6" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite345-7" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="4"
+         result="blur"
+         id="feGaussianBlur347-5" />
+      <feOffset
+         dx="0"
+         dy="2"
+         result="offset"
+         id="feOffset349-3" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite351-5" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#808080;stroke-width:0.264583"
+       id="rect111"
+       width="338.66666"
+       height="211.66666"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.264583;filter:url(#filter353)"
+       id="rect341"
+       width="158.75"
+       height="132.29167"
+       x="89.958328"
+       y="39.687492"
+       ry="1.3229166" />
+    <rect
+       style="fill:#c83771;stroke-width:0.264583"
+       id="rect367"
+       width="31.75"
+       height="10.583333"
+       x="211.66666"
+       y="156.10416"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';fill:#ffffff;stroke-width:0.370416"
+       x="227.79019"
+       y="163.18477"
+       id="text491"><tspan
+         sodipodi:role="line"
+         id="tspan489"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.370416"
+         x="227.79019"
+         y="163.18477">Sign in</tspan></text>
+    <rect
+       style="fill:#f4d7e3;stroke-width:0.264583"
+       id="rect367-2"
+       width="31.75"
+       height="10.583333"
+       x="95.249992"
+       y="156.10416"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';fill:#c83771;stroke-width:0.370416"
+       x="111.37353"
+       y="163.18477"
+       id="text491-9"><tspan
+         sodipodi:role="line"
+         id="tspan489-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:center;text-anchor:middle;fill:#c83771;stroke-width:0.370416"
+         x="111.37353"
+         y="163.18477">Cancel</tspan></text>
+    <rect
+       style="fill:#f2f2f2;stroke-width:0.264583"
+       id="rect367-2-9"
+       width="148.16666"
+       height="10.583336"
+       x="95.249992"
+       y="75.141663"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;opacity:0.5;fill:#000000;stroke-width:0.370416"
+       x="100.24701"
+       y="82.222275"
+       id="text491-9-3"><tspan
+         sodipodi:role="line"
+         id="tspan489-1-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="100.24701"
+         y="82.222275">Username</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87778px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+       x="94.66069"
+       y="52.261215"
+       id="text491-9-7"><tspan
+         sodipodi:role="line"
+         id="tspan489-1-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="94.66069"
+         y="52.261215">Sign in</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+       x="94.66069"
+       y="62.844547"
+       id="text758"><tspan
+         sodipodi:role="line"
+         id="tspan756"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="94.66069"
+         y="62.844547">Sign in to continue to Yube and related services.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+       x="94.815033"
+       y="73.755615"
+       id="text888"><tspan
+         sodipodi:role="line"
+         id="tspan886"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="94.815033"
+         y="73.755615">Username</tspan></text>
+    <rect
+       style="fill:#f2f2f2;stroke-width:0.264583"
+       id="rect890"
+       width="148.16666"
+       height="10.583336"
+       x="95.249992"
+       y="96.308319"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416;opacity:0.5"
+       x="100.1067"
+       y="103.38894"
+       id="text894"><tspan
+         sodipodi:role="line"
+         id="tspan892"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="100.1067"
+         y="103.38894">Password</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+       x="94.815033"
+       y="94.922279"
+       id="text898"><tspan
+         sodipodi:role="line"
+         id="tspan896"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#000000;stroke-width:0.370416"
+         x="94.815033"
+         y="94.922279">Password</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Kumbh Sans';-inkscape-font-specification:'Kumbh Sans';text-align:start;text-anchor:start;fill:#c83771;stroke-width:0.370416"
+       x="94.66069"
+       y="115.76118"
+       id="text1016"><tspan
+         sodipodi:role="line"
+         id="tspan1014"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Inter;-inkscape-font-specification:Inter;text-align:start;text-anchor:start;fill:#c83771;stroke-width:0.370416"
+         x="94.66069"
+         y="115.76118">I forgot my password</tspan></text>
+  </g>
+</svg>

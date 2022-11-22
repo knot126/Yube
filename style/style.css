@@ -16,7 +16,8 @@
 	--main-colour-light: #f4d7e3;
 	--main-colour-background: #fff;
 	--main-colour-text: #000;
-	--secondary-colour: #71c837;
+	--secondary-colour: #ccc;
+	--navbar-colour: #c83771;
 	--navbar-text-colour: #fff;
 	
 	--main-font: "Inter", sans-serif;
@@ -65,8 +66,9 @@ button, input[type="submit"] {
 }
 
 input[type="text"], input[type="password"] {
-	background: transparent;
+	background: #eee;
 	border: none;
+	border-radius: 0.325em;
 	caret-color: var(--main-colour);
 	font-family: var(--main-font);
 	font-size: 12pt;
@@ -74,15 +76,14 @@ input[type="text"], input[type="password"] {
 	width: 100%;
 	outline: none;
 	
-	border-bottom: 0.125em solid #ccc;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	transition: border 0.2s;
+/* 	border: 0.125em solid #ccc; */
+	padding: 0.75em 0.85em;
+/* 	transition: border 0.2s; */
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-	border-bottom: 0.125em solid var(--main-colour);
-}
+/*input[type="text"]:focus, input[type="password"]:focus {
+	border: 0.125em solid var(--main-colour);
+}*/
 
 /* Selection */
 ::selection {
@@ -92,7 +93,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 /* Navigation bar */
 .navbar {
-	background: var(--main-colour);
+	background: var(--navbar-colour);
 	color: #fff;
 	padding: 1em;
 	vertical-align: middle;
@@ -166,6 +167,28 @@ input[type="text"]:focus, input[type="password"]:focus {
 .right-side {
 	width: 25em;
 	float: right;
+}
+
+/* Boxes */
+.box {
+	border-radius: 0.5em;
+	background: #eee;
+	padding: 0.5em;
+	overflow: auto;
+}
+
+.box-half-left {
+	width: 50%;
+	float: left;
+}
+
+.box-half-right {
+	width: 50%;
+	float: right;
+}
+
+.box-align-right {
+	align-items: right;
 }
 
 /* Main video */
@@ -280,7 +303,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 .popup-box {
 	background: var(--main-colour-background);
 	border-radius: 0.325em;
-	box-shadow: 0 0.5em 1.25em #0004;
+	box-shadow: 0 0.65em 1.5em #0004;
 	position: relative;
 	top: calc(50vh - 20em);
 	left: calc(50vw - 25em);
@@ -291,9 +314,9 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 .popup-box-internal {
 	position: relative;
-	padding: 1em;
-	width: 48em;
-	height: 38em;
+	padding: 2em;
+	width: 46em;
+	height: 36em;
 }
 
 .popup-box label {
@@ -302,16 +325,16 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 .sign-in-feild {
 	border-radius: 0.325em;
-	background: #eee;
-	padding: 1em;
+	background: #fff;
+/* 	padding: 1em; */
 	margin-top: 1em;
 }
 
 .sign-in-bottom {
 	position: absolute;
-	width: 48em;
-	bottom: 1em;
-	left: 1em;
+	width: 46em;
+	bottom: 2em;
+	left: 2em;
 }
 
 .sign-in-submit {
