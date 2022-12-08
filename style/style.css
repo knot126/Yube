@@ -12,15 +12,17 @@
 	margin: 0;
 	
 	--main-colour: #c83771;
+	--main-colour-background-text: #fff;
 	--main-colour-darker: #a02c5a;
 	--main-colour-light: #f4d7e3;
+	--main-colour-very-light: #f4e9ed;
 	--main-colour-background: #fff;
 	--main-colour-text: #000;
 	--secondary-colour: #ccc;
 	--navbar-colour: #c83771;
 	--navbar-text-colour: #fff;
 	
-	--main-font: "Inter", sans-serif;
+	--main-font: "Roboto", sans-serif;
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -56,17 +58,25 @@ a {
 /* Default inputs */
 button, input[type="submit"] {
 	border: none;
-	border-radius: 0.325em;
-	background: var(--secondary-colour);
-	padding: 0.6em 1.2em;
+	border-radius: 20px;
 	font-family: var(--main-font);
 	font-size: 12pt;
-	font-weight: 600;
-	color: #000;
+	height: 40px;
+	padding: 0 24px;
+}
+
+.button-filled {
+	background: var(--main-colour);
+	color: var(--main-colour-background-text);
+}
+
+.button-tonal {
+	background: var(--main-colour-light);
+	color: var(--main-colour-text);
 }
 
 input[type="text"], input[type="password"] {
-	background: #eee;
+	background: var(--main-colour-very-light);
 	border: none;
 	border-radius: 0.325em;
 	caret-color: var(--main-colour);
@@ -76,14 +86,8 @@ input[type="text"], input[type="password"] {
 	width: 100%;
 	outline: none;
 	
-/* 	border: 0.125em solid #ccc; */
 	padding: 0.75em 0.85em;
-/* 	transition: border 0.2s; */
 }
-
-/*input[type="text"]:focus, input[type="password"]:focus {
-	border: 0.125em solid var(--main-colour);
-}*/
 
 /* Selection */
 ::selection {
@@ -172,7 +176,7 @@ input[type="text"], input[type="password"] {
 /* Boxes */
 .box {
 	border-radius: 0.5em;
-	background: #eee;
+	background: var(--main-colour-very-light);
 	padding: 0.5em;
 	overflow: auto;
 }
@@ -189,6 +193,23 @@ input[type="text"], input[type="password"] {
 
 .box-align-right {
 	align-items: right;
+}
+
+.box-double-grid {
+	display: grid;
+	grid: auto / auto 110px;
+}
+
+.box-double-grid-left {
+	display: grid;
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+}
+
+.box-double-grid-right {
+	display: grid;
+	grid-row: 1 / 1;
+	grid-column: 2 / 2;
 }
 
 /* Main video */

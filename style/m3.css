@@ -1,0 +1,16 @@
+/**
+ * Material design 3 styles for YuBe
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.m3-button {
+	background: transparent;
+	border: none;
+	padding: none;
+	margin: none;
+}
+
+.m3-filled-button {
+	height: calc(40em / 1em);
+}

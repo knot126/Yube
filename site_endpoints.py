@@ -56,8 +56,10 @@ def get_site_resource(self, path, params, kind):
 	# The allowed resources table
 	resource_table = {
 		"style.css": ["style/style.css", "text/css"],
+		"m3.css": ["style/m3.css", "text/css"],
 		"player.js": ["script/player.js", "text/javascript"],
 		"login.js": ["script/login.js", "text/javascript"],
+		"videometa.js": ["script/videometa.js", "text/javascript"],
 		"icon.svg": ["assets/favicon.svg", "image/svg+xml"],
 		"icon.png": ["assets/favicon.png", "image/png"],
 		"pause.svg": ["assets/pause.svg", "image/svg+xml"],

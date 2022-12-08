@@ -5,9 +5,11 @@
 		<title>${video.title}$ &mdash; yuBe</title>
 		<link rel="icon" type="image/svg+xml" href="/get-resource/icon.svg"/>
 		<link rel="stylesheet" type="text/css" href="/get-resource/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/get-resource/m3.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="/get-resource/player.js"></script>
 		<script src="/get-resource/login.js"></script>
+		<script src="/get-resource/videometa.js"></script>
 	</head>
 	<body class="body">
 		<div id="login-popup" class="login-popup" style="display: none;">
@@ -20,19 +22,17 @@
 					<div class="sign-in-centre">
 						<form id="login">
 							<div class="sign-in-feild">
-<!-- 								<label for="username">Username</label><br/> -->
 								<input id="username" name="username" type="text" placeholder="Username" />
 							</div>
 							<div class="sign-in-feild">
-<!-- 								<label for="password">Password</label><br/> -->
 								<input id="password" name="password" type="password" placeholder="Password" />
 							</div>
 						</form>
 						<p id="login-message"></p>
 					</div>
 					<div class="sign-in-bottom">
-						<button class="sign-in-cancel button-secondary" onclick="hideLogin()">Cancel</button>
-						<button class="sign-in-submit button-primary" onclick="startLogin()">Sign in</input>
+						<button class="sign-in-cancel button-tonal" onclick="hideLogin()">Cancel</button>
+						<button class="sign-in-submit button-filled" onclick="startLogin()">Sign in</input>
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 				</div>
 				<div style="float: right;">
 					<ul>
-						<li id="user-link"><button class="button-primary" onclick="showLogin()">Sign in</button></li>
+						<li id="user-link"><button class="button-filled" onclick="showLogin()">Sign in</button></li>
 						<li></li>
 					</ul>
 				</div>
@@ -74,17 +74,28 @@
 									</div>
 								</div>
 							</div>
-							<h1>${video.title}$</h1>
+							<div class="box-double-grid">
+								<div class="box-double-grid-left">
+									<h1 id="video-title-heading">${video.title}$</h1>
+								</div>
+								<div class="box-double-grid-right">
+									<button id="edit-title-button" class="button-tonal login-only" style="margin-top: 0.5em;" onclick="startEditTitle()">Edit title</button>
+								</div>
+							</div>
 						</div>
 						<div class="rs-actions">
-<!-- 							<p>Uploaded ${video.date}$ by <b>${channel.name}$</b> (<a href="/user/${channel.lower}$">${channel.lower}$</a>) <button class="button-primary">Subscribe</button></p> -->
 							<div class="box">
 								<div class="box-half-left">
 									<p><b>${channel.name}$</b></p>
 									<p><a href="/user/${channel.lower}$">${channel.lower}$</a></p>
 								</div>
 								<div class="box-half-right box-align-right">
-									<p><button class="button-primary">Subscribe</button></p>
+									<div style="float: right;">
+										<p>
+											<button class="button-tonal">More options</button>
+											<button class="button-filled">Subscribe</button>
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -103,5 +114,6 @@
 	</body>
 	<script>
 		updateLoginStatus();
+		updateVideoOwner();
 	</script>
 </html>
