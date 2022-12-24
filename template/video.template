@@ -78,7 +78,7 @@
 								<div class="box-double-grid-left">
 									<h1 id="video-title-heading">${video.title}$</h1>
 								</div>
-								<div class="box-double-grid-right">
+								<div id="edit-title-button-container" class="box-double-grid-right">
 									<button id="edit-title-button" class="button-tonal login-only" style="margin-top: 0.5em;" onclick="startEditTitle()">Edit title</button>
 								</div>
 							</div>
